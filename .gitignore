@@ -1,2 +1,4 @@
-/apps/*
+!/docker/postgres-data
 /docker/postgres-data/*
+!/apps/
+/apps/*
