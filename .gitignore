@@ -2,3 +2,4 @@
 /docker/postgres-data/*
 !/apps/
 /apps/*
+/.idea/
