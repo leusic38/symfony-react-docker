@@ -63,7 +63,7 @@ services:
       context: .
       dockerfile: docker/build-node/Dockerfile-client-admin
     volumes:
-      - './apps/${REACT_APP_NAME}/src:/usr/src/admin-app/src'
-      - './apps/${REACT_APP_NAME}/public:/usr/src/admin-app/public'
+      - './apps/${REACT_ADMIN_APP_NAME}/src:/usr/src/admin-app/src'
+      - './apps/${REACT_ADMIN_APP_NAME}/public:/usr/src/admin-app/public'
     ports:
       - '${REACT_PORT}:3000'
