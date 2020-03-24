@@ -6,9 +6,9 @@ WORKDIR /usr/src/admin-app
 
 # add `/app/node_modules/.bin` to $PATH
 ENV PATH /usr/src/admin-app/node_modules/.bin:$PATH
-COPY apps/$REACT_ADMIN_APP_NAME /usr/src/admin-app
+COPY apps/admin-app /usr/src/admin-app
 # install and cache app dependencies
-COPY apps/$REACT_ADMIN_APP_NAME/package.json /usr/src/admin-app/package.json
+#COPY apps/admin-app/package.json /usr/src/admin-app/package.json
 RUN npm install --silent
 RUN npm install react-scripts@3.0.1 -g --silent
 
