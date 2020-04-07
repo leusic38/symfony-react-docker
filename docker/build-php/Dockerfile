@@ -22,7 +22,7 @@ RUN apk update \
     && pecl install xdebug redis \
     && docker-php-ext-enable xdebug redis \
     && docker-php-source delete \
-    && docker-php-ext-install pdo_mysql soap intl zip \
+    && docker-php-ext-install soap intl zip \
     && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer \
     && rm -rf /tmp/*
 

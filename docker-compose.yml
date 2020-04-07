@@ -21,7 +21,6 @@ services:
         #   MYSQL_ROOT_PASSWORD: root
         #   MYSQL_DATABASE: example
         restart: on-failure
-
     php:
         container_name: ${APP_NAME}-php
 #        user: '1000:1000'
@@ -29,6 +28,9 @@ services:
             context: .
             dockerfile: docker/build-php/Dockerfile
         restart: on-failure
+        environment:
+            PHP_IDE_CONFIG: serverName=localhost
+            XDEBUG_CONFIG: remote_host=172.22.0.1
         volumes:
             - './apps/api-symfo:/usr/src/api-symfo'
         links:
