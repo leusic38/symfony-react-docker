@@ -1,6 +1,6 @@
 dc := docker-compose
 de := $(dc) exec
-sy := $(de) bin/console
+sy := $(de) php bin/console
 dr := $(dc) run --rm
 
 vendor/autoload.php: apps/api-symfo/composer.lock
@@ -19,8 +19,15 @@ api:
 	docker-compose exec php fish
 .PHONY: admin
 admin:
-	docker-compose exec admin
+	docker-compose run admin
 .PHONY: client
 client:
-	docker-compose exec client
+	docker-compose run client
 
+.PHONY: dbrt
+dbrt:
+	docker-compose exec php bin/console debug:router
+
+.PHONY: sy
+sy:
+	$(sy)
