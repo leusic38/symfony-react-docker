@@ -83,7 +83,12 @@ services:
             - '${REACT_ADMIN_PORT}:3000'
         environment:
             - NODE_ENV=development
-
+    mail:
+        image: jeanberu/mailcatcher
+        container_name: ${APP_NAME}-mail
+        ports:
+            - 1080:1080
+            - 1025:1025
 volumes:
   postgres-data:
     driver: local

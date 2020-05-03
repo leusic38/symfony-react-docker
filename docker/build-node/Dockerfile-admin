@@ -8,9 +8,9 @@ WORKDIR /usr/src/admin-app
 ENV PATH /usr/src/admin-app/node_modules/.bin:$PATH
 COPY apps/admin-app /usr/src/admin-app
 # install and cache app dependencies
-#COPY apps/admin-app/package.json /usr/src/admin-app/package.json
 RUN npm install --silent
-RUN npm install react-scripts@3.0.1 -g --silent
+RUN npm install react-scripts -g --silent
+RUN npm install bootstrap jquery typescript popper.js @popperjs/core
 
 # start app
 CMD ["npm", "start"]
